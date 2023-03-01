@@ -1,0 +1,162 @@
+﻿@using ContactManagerDataBusiness.Data
+
+    <div class="modal-body">
+        <h4 class="">@(Model.Id != Guid.Empty ? "Edit Contact" : "New Contact")</h4>
+        <div class="row">
+            <div class="form-group col-lg-2">
+                <label>Title*</label>
+                <input id="editContactTitle" type="text" class="form-control" value="@(Model.Title != null ? @Model.Title : string.Empty)">
+                <div id="invalidTitleFeedback" class="invalidMessage">
+                    Please provide a Title.
+                </div>
+            </div>
+            <div class="form-group col-lg-3">
+                <label>First Name*</label>
+                <input id="editContactFirstName" type="text" class="form-control" value="@(Model.FirstName != null ? @Model.FirstName : string.Empty)">
+                <div id="invalidFirstNameFeedback" class="invalidMessage">
+                    Please provide a valid First Name.
+                </div>
+            </div>
+            <div class="form-group col-lg-3">
+                <label>Last Name*</label>
+                <input id="editContactLastName" type="text" class="form-control" value="@(Model.LastName != null ? @Model.LastName : string.Empty)">
+                <div id="invalidLastNameFeedback" class="invalidMessage">
+                    Please provide a valid Last Name.
+                </div>
+            </div>
+            <div class="form-group col-lg-4">
+                <label>Date of Birth*</label>
+                <input id="editContactDOB" class="form-control" value="@(Model.DOB != null ? @Model.DOB.ToString("MM-dd-yyyy") : string.Empty)">
+                <div id="invalidDOBFeedback" class="invalidMessage">
+                    Please provide a valid Date of Birth.
+                </div>
+            </div>
+        </div>
+
+        <h6>Email(s)</h6>
+
+        <div class="row">
+            <div class="form-group col-md-12">
+                <ul id="emailList" class="list-group">
+                    @if (Model.EmailAddresses != null)
+                    {
+                        foreach (var emailAddress in Model.EmailAddresses)
+                        {
+                            <li class="list-group-item emailListItem" data-email="@emailAddress.Email" data-type="@emailAddress.Type" data-primary="@emailAddress.IsPrimary">
+                                @{
+                                    if (emailAddress.Type == EmailType.Personal)
+                                    {
+                                        <span class="badge badge-primary m-l-10"> @emailAddress.Type</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-success m-l-10"> @emailAddress.Type</span>
+                                    }
+                                }
+                                <span class="m-l-10" > <input type="checkbox" class="primaryCheckbox" onclick="setPrimary(this)" @(emailAddress.IsPrimary ? "checked" : "")> Primary</span>
+                                <span class="m-l-20">@emailAddress.Email</span>
+                                <a class="redText pointer float-right removeEmail" title="Delete Email">X</a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <input id="newEmailAddress" type="email" placeholder="Email" class="form-control">
+                <div id="invalidEmailFeedback" class="invalidMessage">
+                    Please provide a valid email.
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <select id="newEmailAddressType" class="form-control">
+                    <option value="Personal">Personal</option>
+                    <option value="Business">Business</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <button id="addNewEmail" class="btn btn-info">Add</button>
+            </div>
+        </div>
+
+        <h6>Address(s)</h6>
+
+        <div class="row">
+            <div class="form-group col-md-12">
+                <ul id="addressList" class="list-group">
+                    @if (Model.Addresses != null)
+                    {
+                        foreach (var Address in Model.Addresses)
+                        {
+                            <li class="list-group-item addressListItem" data-street1="@Address.Street1" data-street2="@Address.Street2" data-city="@Address.City" data-state="@Address.State" data-zip="@Address.Zip" data-type="@Address.Type">
+                                @{
+                                    if (Address.Type == AddressType.Primary)
+                                    {
+                                        <span class="badge badge-primary m-l-10"> @Address.Type</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-success m-l-10"> @Address.Type</span>
+                                    }
+                                }
+                                <span class="m-l-20">@Address.Street1 @Address.Street2 @Address.City @Address.State @Address.Zip</span>
+                                <a class="redText pointer float-right removeAddress" title="Delete Address">X</a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-4">
+                <input id="newAddressStreet1" type="text" placeholder="Street1" class="form-control addressInput">
+                <div id="invalidAddressStreet1Feedback" class="invalidMessage addressFeedback">
+                    Please provide a valid Street.
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <input id="newAddressStreet2" type="text" placeholder="Street2" class="form-control addressInput">
+            </div>
+            <div class="form-group col-md-4">
+                <input id="newAddressCity" type="text" placeholder="City" class="form-control addressInput">
+                <div id="invalidAddressCityFeedback" class="invalidMessage addressFeedback">
+                    Please provide a valid City.
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <input id="newAddressState" type="text" placeholder="State" class="form-control addressInput">
+                <div id="invalidAddressStateFeedback" class="invalidMessage addressFeedback">
+                    Please provide a valid State.
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <input id="newAddressZip" type="number" placeholder="Zip" class="form-control addressInput">
+                <div id="invalidAddressZipFeedback" class="invalidMessage addressFeedback">
+                    Please provide a valid Zip.
+                </div>
+            </div>
+            <div class="form-group col-md-2">
+                <select id="newAddressType" class="form-control">
+                    <option value="Primary">Primary</option>
+                    <option value="Business">Business</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <button id="addNewAddress" class="btn btn-info">Add</button>
+            </div>
+        </div>
+
+        @if (Model.Id != Guid.Empty)
+        {
+            <input type="hidden" id="contactId" name="contactId" value="@Model.Id">
+        }
+
+        <div class=" text-right">
+            <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button id="saveContactButton" class="btn btn-success">Save</button>
+        </div>
+    </div>
+

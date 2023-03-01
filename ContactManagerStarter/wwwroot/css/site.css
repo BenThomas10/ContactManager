@@ -1,0 +1,137 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Colors */
+
+.redText {
+    color: Red !important;
+}
+
+.whiteBackground {
+    background-color: white !important;
+}
+
+/* Tables */
+
+.hoverHighlightTable tr:hover {
+    background-color: #f2f7f7;
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.defaultCursor {
+    cursor: default;
+}
+
+/* Layout */
+
+.hidden {
+    display: none;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.m-20 {
+    margin: 20px;
+}
+
+.m-30 {
+    margin: 30px;
+}
+
+.m-l-10 {
+    margin-left: 10px;
+}
+
+.m-l-20 {
+    margin-left: 20px;
+}
+
+.m-l-30 {
+    margin-left: 30px;
+}
+
+.m-r-10 {
+    margin-right: 10px;
+}
+
+.m-r-20 {
+    margin-right: 20px;
+}
+
+.m-r-30 {
+    margin-right: 30px;
+}
+
+/* Validation */
+
+.invalidInput {
+    border-color: #dc3545;
+}
+
+.invalidMessage {
+    color: #dc3545;
+    display: none;
+}

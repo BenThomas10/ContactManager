@@ -1,0 +1,26 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="hoverHighlightTable">
+        @foreach (var contact in Model.Contacts)
+        {
+            <tr>
+                <td class="editContact" data-id="@contact.Id">@contact.Title</td>
+                <td class="editContact" data-id="@contact.Id">@contact.FirstName</td>
+                <td class="editContact" data-id="@contact.Id">@contact.LastName</td>
+                <td class="whiteBackground defaultCursor"><a class="redText float-right pointer deleteContact" title="Delete Contact" data-toggle="modal" data-target="#modal-delete" data-id="@contact.Id">X</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

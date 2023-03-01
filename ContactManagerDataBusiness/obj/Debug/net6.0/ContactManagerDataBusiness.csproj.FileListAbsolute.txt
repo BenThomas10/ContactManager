@@ -1,0 +1,12 @@
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\obj\Debug\net6.0\ContactManagerDataBusiness.csproj.AssemblyReference.cache
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\obj\Debug\net6.0\ContactManagerDataBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\obj\Debug\net6.0\ContactManagerDataBusiness.AssemblyInfoInputs.cache
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\obj\Debug\net6.0\ContactManagerDataBusiness.AssemblyInfo.cs
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\obj\Debug\net6.0\ContactManagerDataBusiness.csproj.CoreCompileInputs.cache
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\bin\Debug\net6.0\ContactManagerDataBusiness.deps.json
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\bin\Debug\net6.0\ContactManagerDataBusiness.dll
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\bin\Debug\net6.0\ContactManagerDataBusiness.pdb
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\obj\Debug\net6.0\ContactManagerDataBusiness.dll
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\obj\Debug\net6.0\refint\ContactManagerDataBusiness.dll
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\obj\Debug\net6.0\ContactManagerDataBusiness.pdb
+C:\Users\benth\Desktop\Coding Challenge2\contact-manager-starter\ContactManagerDataBusiness\obj\Debug\net6.0\ref\ContactManagerDataBusiness.dll
